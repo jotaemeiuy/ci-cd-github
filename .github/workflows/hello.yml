@@ -1,0 +1,19 @@
+name: 01-Hello # Esto es opcional, pero es el nombre del workflow
+
+on:
+  push:
+    branches: [ main ] # Esto es opcional, pero es el evento que desencadena el workflow
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest # Esto es obligatorio, pero es el sistema operativo en el que se ejecutará el trabajo
+
+    steps:
+      - name: Saludar # Esto es opcional, pero es el nombre del paso
+        run: echo "Hola desde Github Actions!!!" # Esto es obligatorio, pero es el comando que se ejecutará en este paso
+      
+      - name: Ver fecha del runner # Esto es opcional, pero es el nombre del paso
+        run: date # Esto es obligatorio, pero es el comando que se ejecutará en este paso
+      
+      - name: Ver información de archivos # Esto es opcional, pero es el nombre del paso
+        run: ls -la # Esto es obligatorio, pero es el comando que se ejecutará en este paso
