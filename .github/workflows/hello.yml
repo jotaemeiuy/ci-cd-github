@@ -11,9 +11,18 @@ jobs:
     steps:
       - name: Saludar # Esto es opcional, pero es el nombre del paso
         run: echo "Hola desde Github Actions!!!" # Esto es obligatorio, pero es el comando que se ejecutará en este paso
-      
+
       - name: Ver fecha del runner # Esto es opcional, pero es el nombre del paso
         run: date # Esto es obligatorio, pero es el comando que se ejecutará en este paso
-      
+
       - name: Ver información de archivos # Esto es opcional, pero es el nombre del paso
         run: ls -la # Esto es obligatorio, pero es el comando que se ejecutará en este paso
+  repo-files:
+    runs-on: ubuntu-latest # Esto es obligatorio, pero es el sistema operativo en el que se ejecutará el trabajo
+
+    steps:
+      - name: Descargar código del repositorio # Esto es opcional, pero es el nombre del paso
+        uses: actions/checkout@v6 # Esto es obligatorio, pero es la acción que descarga el código del repositorio
+
+      - name: Ver archivos del repositorio # Esto es opcional, pero es el nombre del paso
+        run: ls -la $GITHUB_WORKSPACE # Esto es obligatorio, pero es el comando que se ejecutará en este paso
